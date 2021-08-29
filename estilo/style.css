@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2? family = Bebas + Neue & display = swap'); /*Exportando a font do google fonts */
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype'); /* Exportando a fonte android da pasta */ 
+    font-weight: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px; /* Seletor global em css, está colocando todos os elementos com margin e paddin zero */
+}
+
+:root {
+    --cor0: #c5ebd6;
+    --cor01: #83e1ad;
+    --cor02: #3ddc84;
+    --cor03: #2fa866;          /* método de adicionar variáveis em css */
+    --cor04: #1a5c37;
+    --cor05: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+a.externo::after {
+ content: '\00A0\1F517';
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor05)); /*Criando o degradê do header*/
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+    
+}
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 450px;
+    margin: auto;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315);
+}
+nav {
+    background-color: var(--cor05);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);
+}
+nav > a {
+    color: var(--cor01);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s; /*Esse é o delay que tem depois que a lista é selecionada, para sumir o hover de background color 03 */
+}
+nav >a:hover {
+    background-color: var(--cor03);
+    color: var(--cor05);
+}
+main {
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 30px;
+    min-width: 350px;
+    max-width: 1000px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+main h1 {
+    color: var(--cor05);
+    font-family: var(--fonte-android);
+}
+main  h2 {
+    font-family: var(--fonte-android); 
+    color: var(--cor04);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor01), transparent); /*Degradê para a direita, usando uma cor e depois colocando o "transparent" depois*/
+    text-indent: 8px;
+}
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 20px;
+    line-height: 2em;
+}
+main strong {
+    color: var(--cor04);
+    font-weight: bold;
+}
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor05);
+    background-color: var(--cor01);
+    padding: 2px 6px;
+}
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor04);
+}
+main img {
+    width: 100%; /*Deixando a imagem sempre responsiva, acompanhando assim a página*/
+}
+main img.pequena {
+    max-width: 350px; /*Não deixa a imagem passar de 350px */
+    display: block; /*Transformando a imagem em um bloco*/
+    margin: auto;
+}
+div.video{
+    background-color: var(--cor05);
+    margin: 0px -20px 30px -20px; /*Essa margin faz com que a div fique "alinhada" com o body e o aside*/
+    padding: 20px;
+    padding-bottom: 58%; 
+    position: relative;
+}
+div.video > iframe {
+    position: absolute;
+    top: 5%; /* Está dando um espaço na parte superior do video*/
+    left: 5%; /* Está dando um espaço na parte esquerda do video*/
+    width: 90%; /*Tratando da largura do video*/
+    height: 90%;  /*Tratando da largura do video*/
+}
+aside {
+    background-color: var(--cor01);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+}
+aside h3 {
+    background-color: var(--cor04);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px; /*Margin usada para colar o título um pouco pra esquerda, com isso o bloco h3 cola na direita e fica alinhada com o aside*/
+    border-radius: 10px 10px 0px 0px; /*Arredondando as bordas no topo esquerda e topo direita*/
+}
+aside > ul {
+    list-style-type: '\2714\00A0\00A0'; /* Está colocando o check up no começo da lista, tag (2714) o (00A0) é apenas para da um espaço entre a lista e o marcador, não é compativel com todos navegadores*/
+    list-style-position: inside;       /*Coloca a bolinha da lista para dentro da box*/
+    columns: 2;                       /*Quebra a lista em duas colunas*/
+
+}
+footer {
+    background-color: var(--cor05);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+footer a {
+    color: white;
+    font-weight: bolder; /*Deixando as letras do link branca e colocando elas em negrito*/
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;    /*Muda a cor do link quando o mouse é passado por cima */
+    color: var(--cor01);
+}
